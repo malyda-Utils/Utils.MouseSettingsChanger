@@ -7,13 +7,29 @@ namespace Utils.MouseSettingsChanger
     {
         static void Main(string[] args)
         {
-            // new mouse speed value
-            UInt32 mouseSpeed = 5;
+            // default mouse speed value
+            UInt32 defaultMouseSpeed = 5;
 
-            // change sensitivity
-            Changer.ChangeMouseSpeed(mouseSpeed); 
+            UInt32 newMouseSpeed;
 
-            Console.WriteLine("MouseSpeedChanged to: {0}", mouseSpeed);
+            while(true)
+            {
+                Console.WriteLine("Type number between 1-10 to set new mouse speed.");
+                if(UInt32.TryParse(Console.ReadLine(),out newMouseSpeed))
+                {
+                    // If new mouse speed is between 1 and 10 change it
+                    if(newMouseSpeed < 0 || newMouseSpeed > 10)
+                    {
+                        newMouseSpeed = defaultMouseSpeed;
+                    }
+                    // change sensitivity
+                    Changer.ChangeMouseSpeed(newMouseSpeed);
+
+                    Console.WriteLine("MouseSpeedChanged to: {0}", newMouseSpeed);
+                    break;
+                }
+            }
+
             Console.Read();
         }
     }
