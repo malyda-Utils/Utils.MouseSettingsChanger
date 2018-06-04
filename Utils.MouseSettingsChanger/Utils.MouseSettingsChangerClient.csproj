@@ -6,7 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\MouseSettingsChangerLib\Utils.MouseSettingsChangerLib.csproj" />
+    <ProjectReference Include="..\Utils.MouseSettingsChangerLib\Utils.MouseSettingsChangerLib.csproj" />
   </ItemGroup>
 
 </Project>
