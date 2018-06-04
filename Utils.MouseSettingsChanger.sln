@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27703.2018
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Utils.MouseSettingsChangerClient", "Utils.MouseSettingsChanger\Utils.MouseSettingsChangerClient.csproj", "{435AFBB5-3909-4ACC-BE5C-BE8746E76821}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Utils.MouseSettingsChangerClient", "Utils.MouseSettingsChangerClient\Utils.MouseSettingsChangerClient.csproj", "{435AFBB5-3909-4ACC-BE5C-BE8746E76821}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Utils.MouseSettingsChangerLib", "Utils.MouseSettingsChangerLib\Utils.MouseSettingsChangerLib.csproj", "{101478D9-9546-4125-9363-3E305C83CE37}"
 EndProject
