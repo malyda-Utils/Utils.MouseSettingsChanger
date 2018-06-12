@@ -34,7 +34,9 @@ UInt32 mouseSpeed = 5;
 Changer.ChangeMouseSpeed(mouseSpeed); 
 ```
 
-**Knihovna provádí následující volání Win32 API**:
+# Volání WinAPI
+Pro změnu citlivosti myši je potřeba importovat (pInvoke) knihovnu User32.dll a připravit si _SystemParametersInfo_.
+## Změna citlivosti myši
 
 ```csharp
 // Settings to change (key)
@@ -56,5 +58,27 @@ SystemParametersInfo(
     ,0);
 }
 ```
+# Získání hodnoty citlivosti myši
+Menší úprava oproti změně hodnoty cistlivosti myši je v parametru __pvParam__, kam se je přidáno __ref__.
+```csharp
+// Settings (key)
+private const UInt32 SpiGetmousespeed = 0x0070;
 
+[DllImport("User32.dll")]
+static extern Boolean SystemParametersInfo(
+    UInt32 uiAction,
+    UInt32 uiParam,
+    ref UInt32 pvParam,
+    UInt32 fWinIni);
+
+// Api call -> get mouse sensitivity
+UInt32 mouseSpeed = 0;
+SystemParametersInfo(
+    SpiGetmousespeed
+    , 0
+    , ref mouseSpeed
+    , 0);
+return mouseSpeed;
+}
+```
 MS Dokumentace k **[SystemParametersInfo](https://msdn.microsoft.com/en-us/library/ms724947.aspx)**, kde lze nalézt další klíče k nastavením.
