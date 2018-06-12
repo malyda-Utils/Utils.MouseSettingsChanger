@@ -26,6 +26,7 @@ namespace Utils.MouseSettingsChanger
                     Changer.ChangeMouseSpeed(newMouseSpeed);
 
                     Console.WriteLine("MouseSpeedChanged to: {0}", newMouseSpeed);
+                    Console.WriteLine("Actual mouse speed from WinApi: {0}", Changer.GetMouseSpeed());
                     break;
                 }
             }
